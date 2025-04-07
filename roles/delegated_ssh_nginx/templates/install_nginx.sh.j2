@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Installing nginx on {{ remote_host }}"
+
+# Update and install nginx
+sudo yum update -y
+sudo amazon-linux-extras enable nginx1 -y || true
+sudo yum install -y nginx
+
+# Start and enable nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+echo "nginx installed successfully on {{ remote_host }}"

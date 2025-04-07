@@ -1,0 +1,5 @@
+- name: Install nginx on private hosts via jump server
+  hosts: jump
+  gather_facts: no
+  roles:
+    - delegated_ssh_nginx
