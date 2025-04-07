@@ -1,3 +1,10 @@
+- name: DEBUG PLAYBOOK ENTRY POINT
+  hosts: jump
+  gather_facts: no
+  tasks:
+    - debug:
+        msg: "Playbook is working and starting"
+
 - name: Install nginx on private hosts via jump server
   hosts: jump
   gather_facts: no
