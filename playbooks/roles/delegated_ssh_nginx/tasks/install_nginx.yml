@@ -17,7 +17,7 @@
 
 - name: Run install script on private host {{ item }}
   ansible.builtin.shell: |
-    sudo ssh -o StrictHostKeyChecking=no {{ item }} {{ remote_script_path }}
+    cat {{ remote_script_path }} | sudo ssh -o StrictHostKeyChecking=no {{ item }} 'bash -s'
   register: install_result
   vars:
     remote_host: "{{ item }}"
