@@ -1,5 +1,7 @@
 - name: Install nginx on private hosts via jump server
   hosts: jump
   gather_facts: no
+  vars:
+    ansible_roles_path: "{{ playbook_dir }}/../roles"
   roles:
     - delegated_ssh_nginx
