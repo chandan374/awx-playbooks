@@ -30,10 +30,10 @@
       ansible.builtin.debug:
         var: install_result.stdout_lines
 
-    - name: Clean up script after execution
-      ansible.builtin.file:
-        path: "{{ tmp_dir.stdout }}"
-        state: absent
+    # - name: Clean up script after execution
+    #   ansible.builtin.file:
+    #     path: "{{ tmp_dir.stdout }}"
+    #     state: absent
   loop: "{{ private_hosts }}"
   loop_control:
     label: "{{ item }}"
