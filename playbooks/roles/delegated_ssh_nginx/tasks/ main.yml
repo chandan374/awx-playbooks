@@ -2,6 +2,11 @@
   ansible.builtin.debug:
     var: groups['private_hosts']
 
+- name: Fail if no private hosts found
+  ansible.builtin.fail:
+    msg: "No private hosts found in 'private_hosts' group!"
+  when: groups['private_hosts'] | length == 0
+
 - name: Loop through private hosts and install nginx via SSH
   vars:
     private_hosts: "{{ groups['private_hosts'] }}"
