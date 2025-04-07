@@ -1,3 +1,3 @@
-- name: DEBUG — This is running inside the role!
+- name: DEBUG — Role is running!
   ansible.builtin.debug:
-    msg: "Role is working. Reached delegated_ssh_nginx tasks."
+    msg: "✅ delegated_ssh_nginx role is loaded and this task is running."
