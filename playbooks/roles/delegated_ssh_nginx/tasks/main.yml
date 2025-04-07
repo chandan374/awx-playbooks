@@ -1,4 +1,4 @@
-- name: Debug: show list of private hosts
+- name: "Debug: show list of private hosts"
   ansible.builtin.debug:
     var: groups['private_hosts']
 
